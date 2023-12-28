@@ -2,13 +2,24 @@ import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, 
 
 const UsersTable = ({rows, selectedUser, deleteUser}) => {
     return (
-        <TableContainer component={Paper}>
-            <Table>
+        <TableContainer component={Paper}
+        sx={{
+            backgroundImage: `url('image3.png')`, // Add this line for background image
+            backgroundSize: 'cover', // Adjust background size
+            backgroundRepeat: 'no-repeat', // Adjust repetition
+            margin:'0px'
+        }}
+        >
+            <Table
+            sx={{
+                marginLeft:'250px',
+                marginTop:'20px',
+            }}>
                 <TableHead>
                     <TableRow>
-                        <TableCell>ID</TableCell>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Actions</TableCell>
+                        <TableCell><b>ID</b></TableCell>
+                        <TableCell><b>Name</b></TableCell>
+                        <TableCell>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Actions</b></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -16,8 +27,8 @@ const UsersTable = ({rows, selectedUser, deleteUser}) => {
                     {rows.length > 0 ? 
                         rows.map(row => (
                             <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                                <TableCell component='th' scope="row">{row.id}</TableCell>
-                                <TableCell component='th' scope="row">{row.name}</TableCell>
+                                <TableCell component='th' scope="row" sx={{fontWeight:'bold'}}>{row.id}</TableCell>
+                                <TableCell component='th' scope="row" sx={{fontWeight:'bold'}}>{row.name}</TableCell>
                                 <TableCell>
                                     <Button
                                         sx={{ margin: '0px 10px' }}

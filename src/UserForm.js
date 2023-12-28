@@ -22,17 +22,30 @@ const UserForm = ({addUser, updateUser, submitted, data, isEdit}) => {
     }, [data]);
 
     return(
-        <Grid
-            container
-            spacing={2}
+        <Grid container spacing={2}
             sx={{
                 backgroundColor:'#ffffff',
-                marginBottom:'30px',
+                marginBottom:'20px',
+                marginLeft:'0px',
+                paddingLeft:'20px',
                 display:'black',
+                backgroundImage: `url('image2.png')`, // Add this line for background image
+                backgroundSize: 'cover', // Adjust background size
+                backgroundRepeat: 'no-repeat', // Adjust repetition
             }}  
         >
             <Grid item xs={12}>
-                <Typography component={'h1'} sx={{color:'#000000'}}>User Form</Typography> 
+                <Typography 
+                    component={'h1'} 
+                    sx={{
+                        color:'#000000' , 
+                        fontWeight:'bold', 
+                        fontSize:30, 
+                        paddingBottom:5,
+                        paddingTop:'40px'
+                        }}>
+                <u>User Form</u>
+                </Typography> 
             </Grid>
 
             <Grid item xs={12} sm={6} sx={{display:'flex'}}>
@@ -46,16 +59,17 @@ const UserForm = ({addUser, updateUser, submitted, data, isEdit}) => {
                         width:'100px', 
                         display:'block',
                         }}>
-                ID
+                <b>ID</b>
                 </Typography>
                 
                 <Input 
                     type="number" 
                     id="id" 
                     name="id" 
-                    sx={{width:'400px'}} 
-                    value={id} 
-                    onChange={e => setId(e.target.value)} 
+                    sx={{
+                        width:'400px'}} 
+                        value={id} 
+                        onChange={e => setId(e.target.value)} 
                 />
 
             </Grid>
@@ -71,7 +85,7 @@ const UserForm = ({addUser, updateUser, submitted, data, isEdit}) => {
                         width:'100px', 
                         display:'block',
                     }}>
-                Name
+                <b>Name</b>
                 </Typography>
                 
                 <Input 
@@ -88,11 +102,11 @@ const UserForm = ({addUser, updateUser, submitted, data, isEdit}) => {
             <Button
                 sx={{
                     margin:'auto',
-                    marginBottom:'20px',
+                    marginBottom:'30px',
                     backgroundColor:'#00c6e6',
                     color:'#000000',
-                    marginLeft:'15px',
-                    marginTop:'20px',
+                    marginLeft:'50px',
+                    marginTop:'40px',
                     '&:hover':{
                         opacity:'0.7',
                         backgroundColor:'#00c6e6',
